@@ -1,1 +1,1 @@
-1.1.0 - Created the mod workspace environment and started commiting to Github
+1.1.0 - Created the mod workspace environment and started commiting to Github, started adding crafting related items.

@@ -1,15 +1,21 @@
 package net.thesyellow.groundedmc;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
+import net.minecraftforge.eventbus.EventBus;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.thesyellow.groundedmc.block.modBlocks;
+import net.thesyellow.groundedmc.item.modCreativeModeTabs;
+import net.thesyellow.groundedmc.item.modItems;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -24,6 +30,9 @@ public class GroundedMC
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        modItems.register(modEventBus);
+        modBlocks.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -36,6 +45,19 @@ public class GroundedMC
 
     private void addCreative(CreativeModeTabEvent.BuildContents event)
     {
+        if (event.getTab() == CreativeModeTabs.INGREDIENTS){
+            event.accept(modItems.TEALWIDOW_FANG);
+            event.accept(modItems.TEALWIDOW_VENOM);
+        }
+        if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS){
+            event.accept(modBlocks.TIGHTLYWOVENWEB);
+            event.accept(modBlocks.LOOSELYWOVENWEB);
+        }
+        if (event.getTab() == modCreativeModeTabs.GROUNDEDMC_TAB){
+            event.accept(modItems.TEALWIDOW_FANG);
+            event.accept(modItems.TEALWIDOW_VENOM);
+            event.accept(modBlocks.TIGHTLYWOVENWEB);
+        }
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
