@@ -57,6 +57,7 @@ public class GroundedMC
             event.accept(modItems.TEALWIDOW_FANG);
             event.accept(modItems.TEALWIDOW_VENOM);
             event.accept(modBlocks.TIGHTLYWOVENWEB);
+            event.accept(modBlocks.LOOSELYWOVENWEB);
         }
     }
 
