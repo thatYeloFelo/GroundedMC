@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "catagory": "building",
+  "key": {
+    "#": {
+      "item": "minecraft:cobweb"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "groundedmc:looselywovenweb"
+  }
+}
