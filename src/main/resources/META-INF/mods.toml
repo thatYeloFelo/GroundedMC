@@ -60,6 +60,12 @@ Inspired by Grounded, by OBSIDIAN ENTERTAINMENT. Mod made by theSyellow, https:/
     ordering="NONE"
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
     side="BOTH"
+[[dependencies.groundedmc]]
+    modId="geckolib"
+    mandatory=true
+    versionRange="[4.1.3]"
+    ordering="NONE"
+    side="BOTH"
 # Here's another dependency
 [[dependencies.groundedmc]]
     modId="minecraft"
