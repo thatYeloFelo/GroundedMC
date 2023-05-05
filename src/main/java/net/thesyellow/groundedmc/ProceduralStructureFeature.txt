@@ -1,0 +1,43 @@
+package net.thesyellow.groundedmc;
+import net.minecraft.block.Blocks;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.FeatureConfig;
+import net.minecraft.world.item.Item;
+
+import java.util.Random;
+
+public class ProceduralStructureFeature extends Feature<FeatureConfig> {
+
+    public ProceduralStructureFeature() {
+        super(FeatureConfig.CODEC);
+    }
+
+    //@Override
+    public boolean generate(World world, net.minecraft.world.gen.chunk.ChunkGenerator<?> generator, Random random, BlockPos pos, FeatureConfig config) {
+        // Generate a 3x3x3 cube of stone blocks at the specified position
+        for (int x = pos.getX() - 1; x <= pos.getX() + 1; x++) {
+            for (int y = pos.getY() - 1; y <= pos.getY() + 1; y++) {
+                for (int z = pos.getZ() - 1; z <= pos.getZ() + 1; z++) {
+                    BlockPos blockPos = new BlockPos(x, y, z);
+                    world.setBlockState(blockPos, Blocks.STONE.getDefaultState(), 2);
+                }
+            }
+        }
+
+        // Generate a 3x3x3 cube of dirt blocks above the stone cube
+        for (int x = pos.getX() - 1; x <= pos.getX() + 1; x++) {
+            for (int z = pos.getZ() - 1; z <= pos.getZ() + 1; z++) {
+                BlockPos blockPos = new BlockPos(x, pos.getY() + 2, z);
+                world.setBlockState(blockPos, Blocks.DIRT.getDefaultState(), 2);
+            }
+        }
+
+        // Generate a single oak sapling on top of the dirt cube
+        BlockPos blockPos = new BlockPos(pos.getX(), pos.getY() + 3, pos.getZ());
+        world.setBlockState(blockPos, Blocks.OAK_SAPLING.getDefaultState(), 2);
+
+        return true;
+    }
+}
