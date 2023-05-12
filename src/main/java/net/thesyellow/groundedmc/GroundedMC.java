@@ -1,6 +1,7 @@
 package net.thesyellow.groundedmc;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -14,6 +15,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.thesyellow.groundedmc.block.modBlocks;
+import net.thesyellow.groundedmc.entity.client.silkSpinnerRenderer;
+import net.thesyellow.groundedmc.entity.modEntities;
 import net.thesyellow.groundedmc.item.modCreativeModeTabs;
 import net.thesyellow.groundedmc.item.modItems;
 import org.slf4j.Logger;
@@ -32,6 +35,8 @@ public class GroundedMC
 
         modItems.register(modEventBus);
         modBlocks.register(modEventBus);
+
+        modEntities.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
@@ -68,6 +73,7 @@ public class GroundedMC
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+            EntityRenderers.register(modEntities.SILKSPINNER.get(), silkSpinnerRenderer::new);
         }
     }
 }

@@ -1,9 +1,34 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
+		"animation.silkspinnerbare.idle": {
+			"loop": true,
+			"animation_length": 1.16667,
+			"bones": {
+				"Head": {
+					"rotation": {
+						"0.0": {
+							"vector": [2.5, 0, 0]
+						},
+						"0.2917": {
+							"vector": [0, 0, 0]
+						},
+						"0.5833": {
+							"vector": [-2.5, 0, 0]
+						},
+						"0.875": {
+							"vector": [0, 0, 0]
+						},
+						"1.1667": {
+							"vector": [2.5, 0, 0]
+						}
+					}
+				}
+			}
+		},
 		"animation.silkspinnerbare.gosleep": {
 			"loop": "hold_on_last_frame",
-			"animation_length": 3,
+			"animation_length": 1.875,
 			"start_delay": "1",
 			"bones": {
 				"Head": {
@@ -19,17 +44,6 @@
 						},
 						"1.875": {
 							"vector": [0, 0, -17.5]
-						},
-						"2.7917": {
-							"vector": [0, 0, -45]
-						}
-					},
-					"position": {
-						"0.0": {
-							"vector": [0, 1, 0]
-						},
-						"2.7917": {
-							"vector": [0, 6, 0]
 						}
 					},
 					"scale": {
