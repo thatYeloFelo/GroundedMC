@@ -13,6 +13,10 @@ public class modItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, GroundedMC.MOD_ID);
     public static final RegistryObject<Item> TEALWIDOW_FANG = ITEMS.register("tealwidow_fang", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TEALWIDOW_VENOM = ITEMS.register("tealwidow_venom", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SPIDERPIECE = ITEMS.register("spiderpiece", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> GREATWOLF_FANG = ITEMS.register("greatwolf_fang", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> GREATWOLF_VENOM = ITEMS.register("greatwolf_venom", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SILK = ITEMS.register("silk", () -> new Item(new Item.Properties()));
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
     }

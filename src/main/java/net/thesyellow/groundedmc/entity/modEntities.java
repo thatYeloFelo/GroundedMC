@@ -19,6 +19,11 @@ public class modEntities {
                     () -> EntityType.Builder.of(silkSpinnerEntity::new, MobCategory.CREATURE)
                             .sized(3.75f, 2.0f)
                             .build(new ResourceLocation(GroundedMC.MOD_ID, "silkspinner").toString()));
+    public static final RegistryObject<EntityType<silkSpinnerEntity>> SILK =
+            ENTITY_TYPES.register("silk",
+                    () -> EntityType.Builder.of(silkSpinnerEntity::new, MobCategory.CREATURE)
+                            .sized(0.25f, 0.25f)
+                            .build(new ResourceLocation(GroundedMC.MOD_ID, "silk").toString()));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register((eventBus));

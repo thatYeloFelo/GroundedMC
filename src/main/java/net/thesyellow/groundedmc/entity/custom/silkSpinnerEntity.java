@@ -26,8 +26,8 @@ public class silkSpinnerEntity extends Monster implements GeoEntity {
 
     public static AttributeSupplier setAttributes() {
         return Monster.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 16D)
-                .add(Attributes.ATTACK_DAMAGE, 7D)
+                .add(Attributes.MAX_HEALTH, 100D)
+                .add(Attributes.ATTACK_DAMAGE, 1D)
                 .add(Attributes.MOVEMENT_SPEED, 0.4f).build();
     }
 

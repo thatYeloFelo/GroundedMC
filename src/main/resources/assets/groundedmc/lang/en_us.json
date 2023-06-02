@@ -1,9 +1,20 @@
 {
   "item.groundedmc.tealwidow_fang": "Teal Widow Fang",
   "item.groundedmc.tealwidow_venom": "Teal Widow Venom",
+  "item.groundedmc.silk": "Ball of Silk",
+  "item.groundedmc.spiderpiece": "Spider Chunk",
+  "item.groundedmc.greatwolf_fang": "Fang o' the Wolf",
+  "item.groundedmc.greatwolf_venom": "Venom o' the Wolf",
 
   "creativemodetab.groundedmc_tab": "GroundedMC",
 
   "block.groundedmc.tightlywovenweb": "Tightly Woven Web",
-  "block.groundedmc.looselywovenweb": "Loosely Woven Web"
+  "block.groundedmc.looselywovenweb": "Loosely Woven Web",
+
+  "entity.groundedmc.silkspinner": "Silk Spinner",
+
+  "key.catagory.groundedmc.weaponaction": "Combat",
+  "key.groundedmc.huck_tool": "Huck",
+  "key.groundedmc.increasestam": "[Developer] Increase Stamina",
+  "key.groundedmc.decreasestam": "[Developer] Decrease Stamina"
 }

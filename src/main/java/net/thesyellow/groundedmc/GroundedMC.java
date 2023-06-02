@@ -19,6 +19,7 @@ import net.thesyellow.groundedmc.entity.client.silkSpinnerRenderer;
 import net.thesyellow.groundedmc.entity.modEntities;
 import net.thesyellow.groundedmc.item.modCreativeModeTabs;
 import net.thesyellow.groundedmc.item.modItems;
+import net.thesyellow.groundedmc.networking.ModMessages;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -46,6 +47,7 @@ public class GroundedMC
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+        ModMessages.register();
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event)
